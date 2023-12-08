@@ -25,4 +25,6 @@ jobs:
         #### AUFGABE 3 COMPILE, DOCKER BUILD UND PUSH
         mvn package
         docker build --tag user1312420/swt2_petclinic/pet-clinic:latest -f Dockerfile .
+        echo ${{ secrets.password }} | docker login -u 'user1312' --password-stdin
+        docker push https://hub.docker.com/repository/docker/user1312420/petclinic/pet-clinic/pet-clinic:latest
           # hier ist Platz für maven package und docker build
